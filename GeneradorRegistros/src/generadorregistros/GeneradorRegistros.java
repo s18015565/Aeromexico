@@ -43,7 +43,7 @@ public class GeneradorRegistros {
                     
                 case 4:
                     //valor=Integer.toString(i);
-                    imprimirColumnaU(apellidos[apellidoAleatorio()]);
+                    imprimirColumnaU(generarFecha());
                     
                     break;
                  
@@ -68,10 +68,10 @@ public class GeneradorRegistros {
         return Y;
     }
     
-    public static int apellidoAleatorio(){
-        int Y=(X.nextInt(apellidos.length));
-        return Y;
-    }
+//    public static int apellidoAleatorio(){
+//        int Y=(X.nextInt(apellidos.length));
+//        return Y;
+//    }
     
     public static String generarCodigo(){
         String[] symbols = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
@@ -97,7 +97,7 @@ public class GeneradorRegistros {
         
         String[] mes={"01","02","03","04","05","06","07","08","09","10","11","12"};
         
-        //int año = ThreadLocalRandom.current().nextInt(min, max + 1);
+        int año = ThreadLocalRandom.current().nextInt(min, max + 1);
         int año=5;
         
         return String.format("%s-%s-%d",dias[generarAleatorio(dias.length)],mes[generarAleatorio(generarAleatorio(mes.length))],año);
