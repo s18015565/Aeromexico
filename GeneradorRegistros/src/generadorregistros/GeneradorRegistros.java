@@ -2,6 +2,7 @@ package generadorregistros;
 
 import java.security.SecureRandom;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GeneradorRegistros {
     
@@ -11,11 +12,11 @@ public class GeneradorRegistros {
     
     public static void main(String[] args) {
         
-        int numeroFilas=10000;
+        int numeroFilas=100;
         int numeroRegistros=4;
         String nombreTabla="Clientes";
         
-        String valor="1";
+        String valor=" ";
         
         System.out.println("INSERT INTO TABLE "+nombreTabla+" VALUES");
         
@@ -98,9 +99,9 @@ public class GeneradorRegistros {
         String[] mes={"01","02","03","04","05","06","07","08","09","10","11","12"};
         
         int año = ThreadLocalRandom.current().nextInt(min, max + 1);
-        int año=5;
+        //int año=5;
         
-        return String.format("%s-%s-%d",dias[generarAleatorio(dias.length)],mes[generarAleatorio(generarAleatorio(mes.length))],año);
+        return String.format("%s-%s-%d",dias[generarAleatorio(29)],mes[generarAleatorio(generarAleatorio(11))],año);
     }
 }
 
