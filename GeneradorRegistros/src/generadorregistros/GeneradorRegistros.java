@@ -3,6 +3,7 @@ package generadorregistros;
 
 import java.security.SecureRandom;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class GeneradorRegistros {
     
@@ -12,7 +13,7 @@ public class GeneradorRegistros {
     
     public static void main(String[] args) {
         
-        int numeroFilas=500;
+        int numeroFilas=200;
         int numeroRegistros=4;
         String nombreTabla="Viajeros";
         
@@ -37,11 +38,11 @@ public class GeneradorRegistros {
                     break;
                     
                 case 2:
-                    imprimirColumna(nombres[generarAleatorio()]);
+                    imprimirColumna(nombres[generarAleatorio(nombres.length)]);
                     break;
                     
                 case 3:
-                    valor=Integer.toString(i);
+                    valor=generarFecha();
                     imprimirColumna(valor);
                     break;
                     
@@ -61,8 +62,6 @@ public class GeneradorRegistros {
         
     }
     
-    
-    
     public static void imprimirColumna(String valor){
         System.out.print("' "+valor+" ', ");
     }
@@ -71,8 +70,9 @@ public class GeneradorRegistros {
         System.out.println("' "+valor+" '), ");
     }
     
-    public static int generarAleatorio(){
-        int Y=(X.nextInt(nombres.length));
+    //Método para generar un número aleatorio con valor entre 0 y <l>. Ocupado principalmente para conseguir un valor aleatorio en un arreglo.
+    public static int generarAleatorio(int l){
+        int Y=(X.nextInt(l));
         return Y;
     }
     
@@ -81,7 +81,7 @@ public class GeneradorRegistros {
         int length = 4;
         StringBuilder sb = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
-            int Y=(X.nextInt(symbols.length));
+            int Y=(generarAleatorio(symbols.length));
             sb.append( symbols[Y] );
     }
         String password = "VI"+sb.toString();
@@ -91,8 +91,8 @@ public class GeneradorRegistros {
     
     public static String generarFecha(){
         
-        int X=1950;
-        int Y=2018;
+        int min=1950; //Parámetro de año mínimo para 
+        int max=2018;
         
         String[] dias={"01","02","03","04","05","06","07","08","09","10",
                        "11","12","13","14","15","16","17","18","19","20",
@@ -100,10 +100,9 @@ public class GeneradorRegistros {
         
         String[] mes={"01","02","03","04","05","06","07","08","09","10","11","12"};
         
-        int numero = (int)(Math.random()*(X-Y+1)+Y);
+        //int año = ThreadLocalRandom.current().nextInt(min, max + 1);
+        int año=5;
         
-        //String fechaCompleta=""
-        
-        return null;
+        return String.format("%s-%s-%d",dias[generarAleatorio(dias.length)],mes[generarAleatorio(generarAleatorio(mes.length))],año);
     }
 }
