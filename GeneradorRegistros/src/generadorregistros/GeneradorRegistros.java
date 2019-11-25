@@ -7,9 +7,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GeneradorRegistros {
    
    
-   static String[] nombres={"ARTURO","JOSHIO","ABEL","ERNESTO","JUAN","JOSÉ LUIS","MARÍA GUADALUPE","FRANCISCO","GUADALUPE","MARÍA","JUANA","ANTONIO","JESÚS","MIGUEL ÁNGEL","PEDRO","ALEJANDRO","MANUEL","MARGARITA","MARÍA DEL CARMEN","JUAN CARLOS","ROBERTO","FERNANDO","DANIEL","CARLOS","JORGE","RICARDO","MIGUEL","EDUARDO","JAVIER","RAFAEL","MARTÍN","RAÚL","DAVID","JOSEFINA","JOSÉ ANTONIO","ARTURO","MARCO ANTONIO","JOSÉ MANUEL","FRANCISCO AVIER","ENRIQUE","VERÓNICA","GERARDO","MARÍA ELENA","LETICIA","ROSA","MARIO","FRANCISCA","ALFREDO","TERESA","ALICIA","MARÍA FERNANDA ","SERGIO ","ALBERTO ","LUIS","ARMANDO","ALEJANDRA","MARTHA","SANTIAGO","YOLANDA","PATRICIA","MARÍA DE LOS ÁNGELES","JUAN MANUEL","ROSA MARÍA","ELIZABETH","GLORIA","ÁNGEL","GABRIELA","SALVADOR","VÍCTOR MANUEL","SILVIA","MARÍA DE GUADALUPE","MARÍA DE JESÚS","GABRIEL","ANDRÉS","ÓSCAR","GUILLERMO","ANA MARÍA","RAMÓN","MARÍA ISABEL","PABLO","RUBEN","ANTONIA","MARÍA LUISA","LUIS ÁNGEL","MARÍA DEL ROSARIO","FELIPE","JORGE JESÚS","JAIME","JOSÉ GUADALUPE","JULIO CESAR","JOSÉ DE JESÚS","DIEGO","ARACELI","ANDREA","ISABEL","MARÍA TERESA","IRMA","CARMEN","LUCÍA","ADRIANA","AGUSTÍN","MARÍA DE LA LUZ","GUSTAVO","NESTOR","MAYLAND","LISETH"};
+   static String[] nombres={"ANTONIO","JOSE","MANUEL","FRANCISCO","DAVID","JUAN","JOSE ANTONIO","JAVIER","DANIEL","JOSE LUIS","FRANCISCO JAVIER","CARLOS","JESUS","ALEJANDRO","MIGUEL","JOSE MANUEL","RAFAEL","MIGUEL ANGEL","PEDRO","ANGEL","PABLO","JOSE MARIA","SERGIO","FERNANDO","LUIS","JORGE","ALBERTO","JUAN CARLOS","ALVARO","JUAN JOSE","ADRIAN","DIEGO","RAUL","JUAN ANTONIO","IVAN","ENRIQUE","RUBEN","RAMON","OSCAR","VICENTE","ANDRES","JUAN MANUEL","JOAQUIN","SANTIAGO","EDUARDO","VICTOR","MARIO","ROBERTO","JAIME","FRANCISCO JOSE","MARCOS","IGNACIO","ALFONSO","JORDI","RICARDO","SALVADOR","HUGO","EMILIO","GUILLERMO","GABRIEL","MARC","JULIO","JULIAN","GONZALO","JOSE MIGUEL","TOMAS","MOHAMED","AGUSTIN","MARTIN","JOSE RAMON","NICOLAS","FELIX","JOAN","ISMAEL","CRISTIAN","SAMUEL","AITOR","HECTOR","JUAN FRANCISCO","JOSEP","MARIANO","LUCAS","JOSE CARLOS","IKER","DOMINGO","SEBASTIAN","ALFREDO","ALEX","CESAR","FELIPE","JOSE ANGEL","JOSE IGNACIO","VICTOR MANUEL","RODRIGO","LUIS MIGUEL","JOSE FRANCISCO","JUAN LUIS","GREGORIO","XAVIER","ALBERT"};
    
-   static String[] nombresanglo={"JAMES","JOHN","ROBERT","MICHAEL","WILLIAM","DAVID","RICHARD","CHARLES","JOSEPH","THOMAS","CHRISTOPHER","DANIEL","PAUL","MARK","DONALD","GEORGE","KENNETH","STEVEN","EDWARD"};
+   static String[] nombresM={"MARIA CARMEN","MARIA","CARMEN","JOSEFA","ANA MARIA","ISABEL","MARIA PILAR","MARIA DOLORES","LAURA","MARIA TERESA","ANA","CRISTINA","MARIA ANGELES","MARTA","FRANCISCA","ANTONIA","MARIA ISABEL","MARIA JOSE","LUCIA","DOLORES","SARA","PAULA","ELENA","MARIA LUISA","PILAR","RAQUEL","ROSA MARIA","CONCEPCION","MANUELA","MERCEDES","MARIA JESUS","BEATRIZ","JULIA","ROSARIO","NURIA","JUANA","SILVIA","TERESA","ENCARNACION","IRENE","ALBA","PATRICIA","MONTSERRAT","ANDREA","ROCIO","ROSA","MONICA","ALICIA","MARIA MAR","ANGELA","SONIA","SANDRA","MARINA","SUSANA","NATALIA","YOLANDA","MARGARITA","MARIA JOSEFA","CLAUDIA","EVA","MARIA ROSARIO","INMACULADA","MARIA MERCEDES","ANA ISABEL","ESTHER","CARLA","SOFIA","NOELIA","VERONICA","ANGELES","NEREA","CAROLINA","MARIA VICTORIA","EVA MARIA","MARIA ROSA","MIRIAM","INES","LORENA","AMPARO","ANA BELEN","MARIA CONCEPCION","MARIA ELENA","VICTORIA","DANIELA","MARIA ANTONIA","CATALINA","LIDIA","CONSUELO","MARIA NIEVES","CELIA","ALEJANDRA","MARTINA","OLGA","GLORIA","EMILIA","AINHOA","LUISA","FATIMA","MARIA SOLEDAD","AURORA"};
+   
+   static String[] nombresAnglo={"JAMES","JOHN","ROBERT","MICHAEL","WILLIAM","DAVID","RICHARD","CHARLES","JOSEPH","THOMAS","CHRISTOPHER","DANIEL","PAUL","MARK","DONALD","GEORGE","KENNETH","STEVEN","EDWARD"};
+   
+   static String[] nombresAngloM={"DAGNY","COLLENE","CODI","CINDIE","CHASSIDY","CHASIDY","CATRICE","CATHERINA","CASSEY","CAROLL","CARLENA","CANDRA","CALISTA","BRYANNA","BRITTENY","BEULA","BARI","AUDRIE","AUDRIA","ARDELIA","ANNELLE","ANGILA","ALONA","ALLYN"};
    
    static String[] apellidosHispanos={"GARCIA","RODRIGUEZ","GONZALEZ","FERNANDEZ","LOPEZ","MARTINEZ","SANCHEZ","PEREZ","GOMEZ","MARTIN","JIMENEZ","RUIZ","HERNANDEZ","DIAZ","MORENO","MUÑOZ","ALVAREZ","ROMERO","ALONSO","GUTIERREZ","NAVARRO","TORRES","DOMINGUEZ","VAZQUEZ","RAMOS","GIL","RAMIREZ","SERRANO","BLANCO","MOLINA","MORALES","SUAREZ","ORTEGA","DELGADO","CASTRO","ORTIZ","RUBIO","MARIN","SANZ","NUÑEZ","IGLESIAS","MEDINA","CORTES","GARRIDO","CASTILLO","SANTOS","LOZANO","GUERRERO","CANO","PRIETO","MENDEZ","CRUZ","CALVO","HERRERA","GALLEGO","FLORES","MARQUEZ","LEON","PEÑA","VIDAL","CABRERA","CAMPOS","VEGA","FUENTES","CARRASCO","DIEZ","REYES","CABALLERO","NIETO","AGUILAR","SANTANA","PASCUAL","HERRERO","MONTERO","HIDALGO","LORENZO","GIMENEZ","IBAÑEZ","FERRER","SANTIAGO","DURAN","VARGAS","BENITEZ","MORA","ARIAS","VICENTE","CARMONA","CRESPO","ROMAN","SOTO","PASTOR","SAEZ","VELASCO","MOYA","SOLER","PARRA","ROJAS","ESTEBAN"};
    
@@ -40,11 +44,16 @@ public class GeneradorRegistros {
    
    static boolean anglo;
    
+   static boolean hombre;
+   
+   static String genero=null;
+   
+   
    
    
     public static void main(String[] args) {
         
-        int numeroFilas=10;
+        int numeroFilas=100;
         int numeroCampos=7;
         String nombreTabla="Clientes";
         
@@ -57,16 +66,30 @@ public class GeneradorRegistros {
             switch(j){
                 
                 case 1: //NOMBRE DEL CLIENTE
-                    if (generarAleatorio(3)>1) {
-                        System.out.print("(");
-                        nombre=nombres[generarAleatorio(nombres.length)];
-                        imprimirColumna(nombre);
-                    }else{
-                        System.out.print("(");
-                        nombre=nombresanglo[generarAleatorio(nombresanglo.length)];
-                        imprimirColumna(nombre);
-                    }
                     
+                    if (generarAleatorio(10)<5) {
+                        hombre = true;
+                        if (generarAleatorio(3)>1) {
+                            System.out.print("(");
+                            nombre=nombres[generarAleatorio(nombres.length)];
+                            imprimirColumna(nombre);
+                        }else{
+                            System.out.print("(");
+                            nombre=nombresAnglo[generarAleatorio(nombresAnglo.length)];
+                            imprimirColumna(nombre);
+                        }
+                    }else{
+                       hombre = false;
+                       if (generarAleatorio(3)>1) {
+                            System.out.print("(");
+                            nombre=nombresM[generarAleatorio(nombresM.length)];
+                            imprimirColumna(nombre);
+                        }else{
+                            System.out.print("(");
+                            nombre=nombresAngloM[generarAleatorio(nombresAngloM.length)];
+                            imprimirColumna(nombre);
+                        }   
+                    }
                     break;
                     
                 case 2: //PRIMER APELLIDO
@@ -75,7 +98,7 @@ public class GeneradorRegistros {
                     hisp=false;
                     
                     for (int k = 0; k < nombres.length; k++) {
-                        if (nombre== nombres[k]) {
+                        if (nombre== nombres[k] || nombre==nombresM[k]) {
                             hisp=true;
                             break;
                         }
@@ -85,12 +108,6 @@ public class GeneradorRegistros {
                         anglo=true;
                     }
                     
-                    /*for (int l = 0; l < nombresanglo.length; l++) {
-                        if (nombre==nombresanglo[l]) {
-                            anglo=true;
-                        }
-                        
-                    }*/
                     
                     if (hisp==true) {
                         apellidoP=apellidosHispanos[generarAleatorio(apellidosHispanos.length)];
@@ -102,7 +119,6 @@ public class GeneradorRegistros {
                     break;
                     
                 case 3://SEGUNDO APELLIDO
-                    
                     if (hisp==true) {
                         apellidoM=apellidosHispanos[generarAleatorio(apellidosHispanos.length)];
                         imprimirColumna(apellidoM);
@@ -110,7 +126,6 @@ public class GeneradorRegistros {
                         apellidoM=apellidosAnglo[generarAleatorio(apellidosAnglo.length)];
                         imprimirColumna(apellidoM);
                     }
-                    //imprimirColumna(apellidosHispanos[generarAleatorio(apellidosHispanos.length)]);
                     break;
                     
                 case 4://GENERAR FECHA DE NACIMIENTO
@@ -118,7 +133,11 @@ public class GeneradorRegistros {
                     break;
                     
                 case 5://GENERAR GENERO
-                    
+                    if (hombre==true) {
+                        imprimirColumna("M");
+                    }else{
+                        imprimirColumna("F");
+                    }
                     break;
                     
                 case 6://GENERAR TELEFONO
