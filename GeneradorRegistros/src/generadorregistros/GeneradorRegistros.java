@@ -36,6 +36,10 @@ public class GeneradorRegistros {
    
    static String apellidoM=null;
    
+   static boolean hisp;
+   
+   static boolean anglo;
+   
    
    
     public static void main(String[] args) {
@@ -53,7 +57,7 @@ public class GeneradorRegistros {
             switch(j){
                 
                 case 1: //NOMBRE DEL CLIENTE
-                    if (generarAleatorio(10)<=5) {
+                    if (generarAleatorio(3)>1) {
                         System.out.print("(");
                         nombre=nombres[generarAleatorio(nombres.length)];
                         imprimirColumna(nombre);
@@ -66,36 +70,45 @@ public class GeneradorRegistros {
                     break;
                     
                 case 2: //PRIMER APELLIDO
-                    boolean hisp;
-                    boolean anglo;
+                    
+                    hisp=false;
+                    hisp=false;
+                    
                     for (int k = 0; k < nombres.length; k++) {
-                        if (nombre==nombres[k]) {
+                        if (nombre== nombres[k]) {
                             hisp=true;
+                            break;
                         }
                     }
                     
-                    if (hisp=true) {
+                    if (hisp==false) {
+                        anglo=true;
+                    }
+                    
+                    /*for (int l = 0; l < nombresanglo.length; l++) {
+                        if (nombre==nombresanglo[l]) {
+                            anglo=true;
+                        }
+                        
+                    }*/
+                    
+                    if (hisp==true) {
                         apellidoP=apellidosHispanos[generarAleatorio(apellidosHispanos.length)];
                         imprimirColumna(apellidoP);
-                    }else{
+                    }else if(anglo==true){
                         apellidoP=apellidosAnglo[generarAleatorio(apellidosAnglo.length)];
                         imprimirColumna(apellidoP);
                     }
                     break;
                     
                 case 3://SEGUNDO APELLIDO
-                    //boolean hisp;
-                    //boolean anglo;
-                    for (int k = 0; k < nombres.length; k++) {
-                        if (nombre==nombres[k]) {
-                            hisp=true;
-                        }
-                    }
                     
-                    if (hisp=true) {
-                        imprimirColumna(apellidosHispanos[generarAleatorio(apellidosHispanos.length)]);
+                    if (hisp==true) {
+                        apellidoM=apellidosHispanos[generarAleatorio(apellidosHispanos.length)];
+                        imprimirColumna(apellidoM);
                     }else{
-                        imprimirColumna(apellidosAnglo[generarAleatorio(apellidosAnglo.length)]);
+                        apellidoM=apellidosAnglo[generarAleatorio(apellidosAnglo.length)];
+                        imprimirColumna(apellidoM);
                     }
                     //imprimirColumna(apellidosHispanos[generarAleatorio(apellidosHispanos.length)]);
                     break;
