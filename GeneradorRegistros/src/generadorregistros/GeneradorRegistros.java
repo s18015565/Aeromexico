@@ -22,15 +22,20 @@ public class GeneradorRegistros {
    static String[] symbols = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
    
    static int [] ladas={922,744,449,241,244,981,998,461,625,55,938,461,625,
-                     55,938,639,341,656,753,831,443,445,642,631,867,951,
+                     055,938,639,341,656,753,831,443,445,642,631,867,951,
                      392,272,771,627,427,782,644,481,834,921,312,271,735,
                      777,667,983,624,444,653,899,861,353};
    
-   static int[] dias={1,2,3,4,5,6,7,8,9,10,
-                    11,12,13,14,15,16,17,18,19,20,
-                    21,22,23,24,25,26,27,28,29,30};
+   static String[] dias={"01","02","03","04","05","06","07","08","09","10",
+                    "11","12","13","14","15","16","17","18","19","20",
+                    "21","22","23","24","25","26","27","28","29","30"};
+   
+   static String[] diasF={"01","02","03","04","05","06","07","08","09","10",
+                    "11","12","13","14","15","16","17","18","19","20",
+                    "21","22","23","24","25","26","27","28"};
+   
         
-   static int[] mes={1,2,3,4,5,6,7,8,9,10,11,12};
+   static String[] mes={"01","02","03","04","05","06","07","08","09","10","11","12"};
    
    static String[] correo={"@GMAIL.COM","@OUTLOOK.COM","@YAHOO.COM","@HOTMAIL.COM"};
    
@@ -53,11 +58,11 @@ public class GeneradorRegistros {
    
     public static void main(String[] args) {
         
-        int numeroFilas=100;
-        int numeroCampos=7;
-        String nombreTabla="Clientes";
+        int numeroFilas=5000;
+        int numeroCampos=8;
+        String nombreTabla="Viajero";
         
-        System.out.println("INSERT INTO TABLE "+nombreTabla+" VALUES");
+        System.out.println("INSERT INTO "+nombreTabla+" VALUES");
         
         for (int i = 1; i <= numeroFilas; i++) {
           
@@ -65,34 +70,39 @@ public class GeneradorRegistros {
             
             switch(j){
                 
-                case 1: //NOMBRE DEL CLIENTE
+                case 1:
+                    System.out.print("(NULL,");
+                    
+                    break;
+                
+                case 2: //NOMBRE DEL CLIENTE
                     
                     if (generarAleatorio(10)<5) {
                         hombre = true;
                         if (generarAleatorio(3)>1) {
-                            System.out.print("(");
+                            
                             nombre=nombres[generarAleatorio(nombres.length)];
                             imprimirColumna(nombre);
                         }else{
-                            System.out.print("(");
+                            
                             nombre=nombresAnglo[generarAleatorio(nombresAnglo.length)];
                             imprimirColumna(nombre);
                         }
                     }else{
                        hombre = false;
                        if (generarAleatorio(3)>1) {
-                            System.out.print("(");
+                            
                             nombre=nombresM[generarAleatorio(nombresM.length)];
                             imprimirColumna(nombre);
                         }else{
-                            System.out.print("(");
+                            
                             nombre=nombresAngloM[generarAleatorio(nombresAngloM.length)];
                             imprimirColumna(nombre);
                         }   
                     }
                     break;
                     
-                case 2: //PRIMER APELLIDO
+                case 3: //PRIMER APELLIDO
                     
                     hisp=false;
                     hisp=false;
@@ -118,7 +128,7 @@ public class GeneradorRegistros {
                     }
                     break;
                     
-                case 3://SEGUNDO APELLIDO
+                case 4://SEGUNDO APELLIDO
                     if (hisp==true) {
                         apellidoM=apellidosHispanos[generarAleatorio(apellidosHispanos.length)];
                         imprimirColumna(apellidoM);
@@ -128,11 +138,11 @@ public class GeneradorRegistros {
                     }
                     break;
                     
-                case 4://GENERAR FECHA DE NACIMIENTO
+                case 5://GENERAR FECHA DE NACIMIENTO
                     imprimirColumna(generarFecha());
                     break;
                     
-                case 5://GENERAR GENERO
+                case 6://GENERAR GENERO
                     if (hombre==true) {
                         imprimirColumna("M");
                     }else{
@@ -140,11 +150,11 @@ public class GeneradorRegistros {
                     }
                     break;
                     
-                case 6://GENERAR TELEFONO
+                case 7://GENERAR TELEFONO
                     imprimirColumna(generarTelefono());
                     break;
                     
-                case 7://GENERAR CORREO
+                case 8://GENERAR CORREO
                     imprimirColumnaU(generarCorreo(apellidoP));
                     break;
                     
@@ -190,10 +200,17 @@ public class GeneradorRegistros {
         
         int min=1950; //Parámetro de año mínimo 
         int max=2018;//Parámetro de año máximo
-
-        int año = generarAleatorioRango(min,max);
         
-        return String.format("%d-%d-%d",dias[generarAleatorio(dias.length)],mes[generarAleatorio(mes.length)],año);
+        
+        int año = generarAleatorioRango(min,max);
+        String diaA=dias[generarAleatorio(dias.length)];
+        String mesA=mes[generarAleatorio(mes.length)];
+        
+        if ("02".equals(mesA)){
+            diaA=diasF[generarAleatorio(diasF.length)];
+        }
+        
+        return String.format("%d-%s-%s",año,mesA,diaA);
         
     }
     
