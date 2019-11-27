@@ -27,8 +27,8 @@ public class GeneradorRegistros {
                      777,667,983,624,444,653,899,861,353};
    
    static String[] dias={"01","02","03","04","05","06","07","08","09","10",
-                    "11","12","13","14","15","16","17","18","19","20",
-                    "21","22","23","24","25","26","27","28","29","30"};
+                        "11","12","13","14","15","16","17","18","19","20",
+                        "21","22","23","24","25","26","27","28","29","30"};
    
    static String[] diasF={"01","02","03","04","05","06","07","08","09","10",
                     "11","12","13","14","15","16","17","18","19","20",
@@ -58,9 +58,9 @@ public class GeneradorRegistros {
    
     public static void main(String[] args) {
         
-        int numeroFilas=5000;
+        int numeroFilas=50;
         int numeroCampos=8;
-        String nombreTabla="Viajero";
+        String nombreTabla="Cliente";
         
         System.out.println("INSERT INTO "+nombreTabla+" VALUES");
         
